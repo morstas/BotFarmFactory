@@ -23,6 +23,7 @@
 | [Onewin]() | ✅ |
 | [Simple_tap_bot](https://t.me/Simple_Tap_Bot?start=1718085881160) | ❌ |
 | [Solstone](https://t.me/solstonebot?start=102796269) | ❌ |
+
 * на доработке
  
 ## Использование
