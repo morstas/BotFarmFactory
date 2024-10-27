@@ -66,4 +66,4 @@ USDT TRC20: `TAijXFWvcAjeVQQCZGsiZ1z9CbbXojGLob`
 
 TON, USDT TON: `UQBcSKPEA0N6wjbux7UqiLcG8aLFx-Mxi7jF0bP4nizcHuA9`, `EQBcSKPEA0N6wjbux7UqiLcG8aLFx-Mxi7jF0bP4nizcHr34`
 
-![TON](https://github.com/user-attachments/assets/0f313ba0-be4e-4ed1-9e95-3f46926cc374)
+![TON](https://github.com/user-attachments/assets/ef94f80c-b751-43c0-8d51-6882f728d6d7)
