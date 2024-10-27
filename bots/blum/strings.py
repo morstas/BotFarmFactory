@@ -1,20 +1,21 @@
 URL_WEBAPP_INIT = "https://telegram.blum.codes/"
-URL_ME = "https://gateway.blum.codes/v1/user/me"
+URL_ME = "https://user-domain.blum.codes/api/v1/user/me"
 URL_NOW = "https://game-domain.blum.codes/api/v1/time/now"
-URL_AUTH = "https://gateway.blum.codes/v1/auth/provider/PROVIDER_TELEGRAM_MINI_APP"
-URL_REFRESH_TOKEN = "https://gateway.blum.codes/v1/auth/refresh"
+URL_AUTH = "https://user-domain.blum.codes/api/v1/auth/provider/PROVIDER_TELEGRAM_MINI_APP"
+URL_REFRESH_TOKEN = "https://user-domain.blum.codes/api/v1/auth/refresh"
 URL_BALANCE = "https://game-domain.blum.codes/api/v1/user/balance"
-URL_TASKS = "https://game-domain.blum.codes/api/v1/tasks" 
-URL_TASK_START = "https://game-domain.blum.codes/api/v1/tasks/{id}/start"
-URL_TASK_CLAIM = "https://game-domain.blum.codes/api/v1/tasks/{id}/claim" 
+URL_TASKS = "https://earn-domain.blum.codes/api/v1/tasks" 
+URL_TASK_START = "https://earn-domain.blum.codes/api/v1/tasks/{id}/start"
+URL_TASK_VALIDATE = "https://earn-domain.blum.codes/api/v1/tasks/{id}/validate"
+URL_TASK_CLAIM = "https://earn-domain.blum.codes/api/v1/tasks/{id}/claim" 
 URL_FARMING_CLAIM = "https://game-domain.blum.codes/api/v1/farming/claim"  
 URL_FARMING_START = "https://game-domain.blum.codes/api/v1/farming/start"  
-URL_PLAY_START = "https://game-domain.blum.codes/api/v1/game/play"  
-URL_PLAY_CLAIM = "https://game-domain.blum.codes/api/v1/game/claim" 
+URL_PLAY_START = "https://game-domain.blum.codes/api/v2/game/play"  
+URL_PLAY_CLAIM = "https://game-domain.blum.codes/api/v2/game/claim" 
 URL_DAILY_REWARD = "https://game-domain.blum.codes/api/v1/daily-reward?offset=-180"
-URL_FRIENDS_BALANCE = "https://gateway.blum.codes/v1/friends/balance"
-URL_FRIENDS_CLAIM = "https://gateway.blum.codes/v1/friends/claim"
-URL_CHECK_NAME = "https://gateway.blum.codes/v1/user/username/check"
+URL_FRIENDS_BALANCE = "https://user-domain.blum.codes/api/v1/friends/balance"
+URL_FRIENDS_CLAIM = "https://user-domain.blum.codes/api/v1/friends/claim"
+URL_CHECK_NAME = "https://user-domain.blum.codes/api/v1/user/username/check"
 
 MSG_AUTH = "Получение токена"
 MSG_REFRESH = "Обновление токена"
@@ -46,4 +47,24 @@ HEADERS = {
 
 TOKEN_FILE = "token.json"
 
-
+TASK_CODES = {
+    "Secure your Crypto!": "BEST PROJECT EVER",
+    "Backing from Binance Labs": "VALUE",
+    "Forks Explained": "GO GET",
+    "Navigating Crypto": "HEYBLUM",
+    "What are Telegram Mini Apps?": "CRYPTOBLUM",
+    "Say No to Rug Pull!": "superblum",
+    "What Are AMMs?": "CRYPTOSMART",
+    "Liquidity Pools Guide": "BLUMERSSS",
+    "$2.5M+ DOGS Airdrop": "HAPPYDOGS",
+    "Doxxing? What's that?": "NODOXXING",
+    "Pre-Market Trading?": 'WOWBLUM',
+    'How to Memecoin?': 'MEMEBLUM',
+    'Bitcoin Ranbow Chart': 'SOBLUM',
+    'Crypto Terms Part 1': 'BLUMEXPLORER',
+    'Token Burning: How \u0026 Why?': 'ONFIRE',
+    'Play track \u0026 type track name': 'blum - big city life',
+    'How to trade Perps?': 'CRYPTOFAN',
+    'Sharding Explained': 'BLUMTASTIC',
+    'DeFi Explained': 'BLUMFORCE'
+}

@@ -1,5 +1,5 @@
 from bots.base.base import BaseFarmer
-from bots.template.strings import HEADERS
+from .strings import HEADERS
 
 
 class BotFarmer(BaseFarmer):
