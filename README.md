@@ -1,6 +1,30 @@
 # BotFarmFactory
 Небольшой "фрейемворк" для создания ферм по прокачке телеграм "тапалок"
 
+## Дисклаймер
+"Фрейемворк" создан исключительно с образовательной целью для изучения возможностей языка `Python`. 
+Ваши аккаунты могут быть забанены, если вы будете использовать его не по назначению. 
+Автор снимает с себя какую либо ответственность. Все что вы делаете, вы делаете на свой страх и риск.
+
+## Актуальность
+
+| Модуль | Поддерживается |
+| - | - |
+| [Blum](https://t.me/BlumCryptoBot/app?startapp=ref_ItXoLRFElL) | ✅* |
+| [ZAVOD](https://t.me/Mdaowalletbot?start=102796269) | ✅ |
+| [Cellcoin_bot](https://t.me/cellcoin_bot?start=102796269) | ✅ |
+| [Iceberg](https://t.me/IcebergAppBot?start=referral_102796269) | ✅ |
+| [Timeton](https://t.me/TimeTONbot?start=TotalAwesome) | ✅ |
+| [Anon](https://t.me/AnonEarnBot) | ✅ |
+| [TapCoinsBot](https://t.me/tapcoinsbot/app?startapp=ref_QjG2zG) | ✅ |
+| [HEXN](https://t.me/hexn_bot/app?startapp=63b093b0-fcb8-41b5-8f50-bc61983ef4e3) | ✅ |
+| [AltOOshka](https://t.me/altooshka_bot?start=z6HfRqEhax4) | ✅ |
+| [Orbitonx]() | ✅ |
+| [Onewin]() | ✅ |
+| [Simple_tap_bot](https://t.me/Simple_Tap_Bot?start=1718085881160) | ❌ |
+| [Solstone](https://t.me/solstonebot?start=102796269) | ❌ |
+* на доработке
+ 
 ## Использование
 Примерынй алгоритм действий:
 1. В `config.py` находится конфигурация клиента Telegram, ее желательно не трогать. Так же есть флаг DEBUG. (при значении True будет писать диагностическую информацию в файл debug.log)
@@ -31,25 +55,6 @@
 ## Для разработчиков
 Было бы неплохо если бы разработчики брались за написание модулей для фабрики и помогали [комьюнити](https://t.me/cryptoautofarm) расти. 
 Методы, атрибуты и подходы, которые помогут в написании модулей. [Руководство будет здесь](bots/base/DEV_GUIDE.md)
-
-В данный момент реализованы боты:
-
-- [cellcoin_bot](https://t.me/cellcoin_bot?start=102796269)
-- [simple_tap_bot](https://t.me/Simple_Tap_Bot?start=1718085881160)
-- [blum](https://t.me/BlumCryptoBot/app?startapp=ref_ItXoLRFElL)
-- [iceberg](https://t.me/IcebergAppBot?start=referral_102796269)
-- [MDAO Wallet (ZAVOD)](https://t.me/Mdaowalletbot?start=102796269)
-- [anon](https://t.me/AnonEarnBot) (Если не регается, ищем рефки в интернете)
-- [hamster kombat](https://t.me/Hamster_kombat_bot/start?startapp=kentId102796269)
-- [timeton](https://t.me/TimeTONbot?start=TotalAwesome)
-- [Solstone](https://t.me/solstonebot?start=102796269)
-
-### Комьюнити модули:
-
-- [TapCoinsBot](https://t.me/tapcoinsbot/app?startapp=ref_QjG2zG)
-- [HEXN](https://t.me/hexn_bot/app?startapp=63b093b0-fcb8-41b5-8f50-bc61983ef4e3)
-- [AltOOshka](https://t.me/altooshka_bot?start=z6HfRqEhax4)
-
 
 Боты начнут последовательно (или параллельно) фармить на каждом аккаунте
 
