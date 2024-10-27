@@ -6,7 +6,7 @@ from requests import Session
 from .utils import check_proxy, retry, logging, debug_logger
 from .strings import USER_AGENTS, LOG_TEMPLATE, MSG_PROXY_CONNECTION_ERROR
 from config import DEBUG, SLEEP_AT_NIGHT, NIGHT_HOURS
-
+import cloudscraper
 
 class BaseFarmer(Session):
 
@@ -32,6 +32,7 @@ class BaseFarmer(Session):
     is_alive = True
     ip = None
     debug = True
+    use_cloudscraper = False
 
     def __init__(self, initiator, proxy=None, only_proxy=False, **kwargs) -> None:
         super().__init__()
@@ -39,6 +40,7 @@ class BaseFarmer(Session):
         self.set_headers()
         self.update_user_agent()
         self.initiator = initiator
+        self.session = self.create_session()
         self.get_account_name()
         if proxy:
             proxies = dict(http=proxy, https=proxy)
@@ -51,6 +53,12 @@ class BaseFarmer(Session):
             self.initiator.prepare_bot(self.name, self.name, self.extra_code)
         self.authenticate()
         self.initiator.prepare_bot(self.name, self.name, self.extra_code or self.app_extra)
+
+    def create_session(self):
+        if self.use_cloudscraper:
+            return cloudscraper.create_scraper()
+        else:
+            return Session
 
     def log(self, message, error=False, debug=False):
         ip = self.ip if self.ip else "no_proxy"

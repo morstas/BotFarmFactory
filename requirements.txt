@@ -3,4 +3,4 @@ requests
 brotli
 python-dateutil
 pycryptodome
-cfscrape
+cloudscraper

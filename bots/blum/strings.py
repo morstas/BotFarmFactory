@@ -67,5 +67,8 @@ TASK_CODES = {
     'Play track \u0026 type track name': 'blum - big city life',
     'How to trade Perps?': 'CRYPTOFAN',
     'Sharding Explained': 'BLUMTASTIC',
-    'DeFi Explained': 'BLUMFORCE'
+    'DeFi Explained': 'BLUMFORCE',
+    'What is On-chain Analysis?': 'BLUMEXTRA',
+    'Crypto Slang. Part 1': 'BLUMSTORM',
+    'How To Find Altcoins?': 'ULTRABLUM',
 }
