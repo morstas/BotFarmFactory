@@ -29,8 +29,8 @@
 
 
 ## Для разработчиков
-Т.к. тащить фабрику и огромное количество ботов в одного - уже непостяжимая задача, было бы неплохо если бы разработчики брались за написание модулей для фабрики и помогали [комьюнити](https://t.me/cryptoautofarm) расти. 
-Я постараюсь описать методы, атрибуты и подходы которые помогут в написании модулей. [Руководство будет здесь](bots/base/DEV_GUIDE.md)
+Было бы неплохо если бы разработчики брались за написание модулей для фабрики и помогали [комьюнити](https://t.me/cryptoautofarm) расти. 
+Методы, атрибуты и подходы, которые помогут в написании модулей. [Руководство будет здесь](bots/base/DEV_GUIDE.md)
 
 В данный момент реализованы боты:
 
@@ -43,26 +43,26 @@
 - [hamster kombat](https://t.me/Hamster_kombat_bot/start?startapp=kentId102796269)
 - [timeton](https://t.me/TimeTONbot?start=TotalAwesome)
 - [Solstone](https://t.me/solstonebot?start=102796269)
-- [Race meme](https://t.me/Racememe_bot?start=_102796269)
 
 ### Комьюнити модули:
 
 - [TapCoinsBot](https://t.me/tapcoinsbot/app?startapp=ref_QjG2zG)
 - [HEXN](https://t.me/hexn_bot/app?startapp=63b093b0-fcb8-41b5-8f50-bc61983ef4e3)
 - [AltOOshka](https://t.me/altooshka_bot?start=z6HfRqEhax4)
-- [DOGS](https://t.me/dogshouse_bot/join?startapp=07wokQJZTrS5FSrah8SigQ)
+
 
 Боты начнут последовательно (или параллельно) фармить на каждом аккаунте
 
 Если все выполнено правильно, вы увидите примерно следующую картину:
-![image](https://github.com/TotalAwesome/BotFarmFactory/assets/39047158/a0e77b95-5ae1-4f64-b68d-cb904c0866b7)
+![example](https://github.com/user-attachments/assets/f907a5e6-7b5f-4a62-aff4-7aa3144fefeb)
 
 Ответы почти на все вопросы уже есть в канале или в чате и в закрепе: https://t.me/cryptoearnfactory
 
 ### Донаты приветствуются: 
 
-USDT TRC20: `TQDFebuhjHNZscWKQW79mUCGK3EwihWn8g`
+USDT TRC20: `TAijXFWvcAjeVQQCZGsiZ1z9CbbXojGLob`
 
-USDT TON: `UQA4gLdTxkyGNahS3CEpbkbbb8Ktd5S27yOBby2KAF1zKwWC`
+![Tron](https://github.com/user-attachments/assets/2a332718-8465-4415-8333-16f1c379f5fa)
 
-TON: `UQA4gLdTxkyGNahS3CEpbkbbb8Ktd5S27yOBby2KAF1zKwWC`
+TON, USDT TON: `UQBcSKPEA0N6wjbux7UqiLcG8aLFx-Mxi7jF0bP4nizcHuA9`, `EQBcSKPEA0N6wjbux7UqiLcG8aLFx-Mxi7jF0bP4nizcHr34`
+![TON](https://github.com/user-attachments/assets/0f313ba0-be4e-4ed1-9e95-3f46926cc374)
