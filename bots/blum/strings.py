@@ -1,3 +1,4 @@
+URL_BASE_EARN = "https://earn-domain.blum.codes"
 URL_WEBAPP_INIT = "https://telegram.blum.codes/"
 URL_ME = "https://user-domain.blum.codes/api/v1/user/me"
 URL_NOW = "https://game-domain.blum.codes/api/v1/time/now"

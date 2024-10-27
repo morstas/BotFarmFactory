@@ -10,7 +10,7 @@ from .strings import HEADERS, URL_REFRESH_TOKEN, URL_BALANCE, URL_TASKS, \
     MSG_REFRESH, MSG_BALANCE_UPDATE, MSG_START_FARMING, MSG_CLAIM_FARM, MSG_BEGIN_GAME, MSG_GAME_OFF, \
     MSG_PLAYED_GAME, MSG_DAILY_REWARD, MSG_FRIENDS_CLAIM, URL_CHECK_NAME, MSG_INPUT_USERNAME, \
     URL_TASK_CLAIM, URL_TASK_START, MSG_TASK_CLAIMED, MSG_TASK_STARTED, MSG_BALANCE_INFO, TASK_CODES, \
-    URL_TASK_VALIDATE
+    URL_TASK_VALIDATE, URL_BASE_EARN
 from .config import MANUAL_USERNAME, GAME_TOGGLE_ON
 
 GAME_RESULT_RANGE = (190, 280)
@@ -28,6 +28,7 @@ class BotFarmer(BaseFarmer):
     auth_data = None
     codes_to_refresh = (401,)
     refreshable_token = True
+    eligible = False
 
     @property
     def initialization_data(self):
@@ -119,6 +120,8 @@ class BotFarmer(BaseFarmer):
             self.balance_data = response.json()
             self.balance = self.balance_data['availableBalance']
             self.play_passes = self.balance_data['playPasses']
+            self.log(MSG_BALANCE_INFO.format(balance=self.balance,
+                                             play_passes=self.play_passes))
     
     def check_tasks(self):
         self.update_tasks()
@@ -138,27 +141,30 @@ class BotFarmer(BaseFarmer):
     def handle_task(self, task):
         task_id = task['id']
         if task['status'] == "NOT_STARTED":
-            response = self.post(URL_TASK_START.format(id=task_id))
+            response = self.post(f'{URL_BASE_EARN}/api/v1/tasks/{task_id}/start')
             if response.status_code == 200:
                 self.log(MSG_TASK_STARTED.format(title=task['title']))
                 task.update(response.json())
                 sleep(random() * 5)
         elif task['status'] == "READY_FOR_CLAIM":
-            response = self.post(URL_TASK_CLAIM.format(id=task_id))
+            response = self.post(f'{URL_BASE_EARN}/api/v1/tasks/{task_id}/claim')
             if response.status_code == 200:
                 self.log(MSG_TASK_CLAIMED.format(title=task['title'], reward=task.get('reward', 'не указано')))
                 task.update(response.json())
                 sleep(random() * 5)
         elif task['status'] == "READY_FOR_VERIFY":
-            keyword = TASK_CODES.get(task['title'], "Введите код для задания: ")
-            payload = {"keyword": keyword}
-            validate_response = self.post(URL_TASK_VALIDATE.format(id=task_id), json=payload)
-            if validate_response.status_code == 200:
-                self.log(f"Задание '{task['title']}' успешно выполнено.")
-                task.update(validate_response.json())
+            keyword = TASK_CODES.get(task['title'])
+            if keyword:
+                payload = {"keyword": keyword}
+                validate_response = self.post(f'{URL_BASE_EARN}/api/v1/tasks/{task_id}/validate', json=payload)
+                if validate_response.status_code == 200:
+                    self.log(f"Задание '{task['title']}' успешно выполнено.")
+                    task.update(validate_response.json())
+                else:
+                    self.error(f"Не удалось подтвердить задание '{task['title']}'")
+                    sleep(2)
             else:
-                self.error(f"Не удалось подтвердить задание '{task['title']}'.")
-                sleep(2)
+                self.log(f"Введите код для задания '{task['title']}'")
     
     def start_farming(self):
         if 'farming' not in self.balance_data:
@@ -170,6 +176,13 @@ class BotFarmer(BaseFarmer):
             self.log(MSG_CLAIM_FARM.format(amount=self.balance_data["farming"]["balance"]))
         self.log(MSG_BALANCE_INFO.format(balance=self.balance,
                                          play_passes=self.play_passes))
+
+    def elig_dogs(self):
+        response = self.get('https://game-domain.blum.codes/api/v2/game/eligibility/dogs_drop')
+        if response.status_code == 200:
+            data = response.json()
+            self.eligible = data.get('eligible', False)
+            self.log(f"Доступность Dogs Drop: {'Да' if self.eligible else 'Нет'}")
 
     def play_game(self):
         if not GAME_TOGGLE_ON:
@@ -196,7 +209,6 @@ class BotFarmer(BaseFarmer):
         result = self.get(URL_DAILY_REWARD, return_codes=(404,))
         if result.status_code == 200:
             self.post(URL_DAILY_REWARD)
-            {"ordinal":31,"reward":{"passes":7,"points":"70"}}
             msg_data = result.json()['days'][-1]
             self.log(MSG_DAILY_REWARD.format(days=msg_data['ordinal'],
                                              passes=msg_data['reward']['passes'],
@@ -214,6 +226,7 @@ class BotFarmer(BaseFarmer):
         self.daily_reward()
         self.friends_claim()
         self.update_balance(log_info=True)
+        self.elig_dogs()
         # self.play_game()
         self.start_farming()
         self.check_tasks()
