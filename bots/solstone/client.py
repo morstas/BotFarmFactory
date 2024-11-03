@@ -14,6 +14,7 @@ class BotFarmer(BaseFarmer):
     initialization_data = dict(peer=name, bot=name, url=URL_INIT)
     base_payload = None
     time_shift = (8 * 60 * 60 + 10) * 1000
+    use_cloudscraper = True
 
     def timestamp(self):
         return int(utc_timestamp() * 1000)
@@ -80,5 +81,5 @@ class BotFarmer(BaseFarmer):
     def farm(self):
         self.claim_tasks()
         self.claim_or_start_farming()
-        self.claim_refs()
+        # self.claim_refs()
         

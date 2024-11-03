@@ -22,7 +22,7 @@
 | [Orbitonx]() | ✅ |
 | [Onewin]() | ✅ |
 | [Simple_tap_bot](https://t.me/Simple_Tap_Bot?start=1718085881160) | ❌ |
-| [Solstone](https://t.me/solstonebot?start=102796269) | ❌ |
+| [Solstone](https://t.me/solstonebot?start=102796269) | ✅ |
 | [Notpixel](https://t.me/notpixel/app?startapp=f539306880_s645506) | ✅ |
 
 * на доработке

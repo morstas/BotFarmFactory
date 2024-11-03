@@ -9,7 +9,7 @@ URL_REFS_INFO = "https://solstone-api.gleam.bot/users/{tg_id}/invitees?project=S
 
 HEADERS = {
   'accept': 'application/json, text/plain, */*',
-  'accept-language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,cy;q=0.6',
+  'accept-language': 'ru,ru-RU;q=0.9,en-US;q=0.8,en;q=0.7',
   'cache-control': 'no-cache',
   'content-type': 'application/json',
   'ngrok-skip-browser-warning': '69420',
@@ -23,6 +23,7 @@ HEADERS = {
   'sec-fetch-dest': 'empty',
   'sec-fetch-mode': 'cors',
   'sec-fetch-site': 'same-site',
+  'x-requested-with': 'org.telegram.messenger',
   'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRXN8N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36',
 }
 
